@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-duration-bar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DurationBarComponent implements OnInit {
 
-  constructor() { }
+  value: string
+
+  constructor(
+    private _playerService: PlayerService
+  ) { }
 
   ngOnInit(): void {
+    this._playerService.currentTimeSubject$.subscribe(seconds => {
+     this.value = Math.round(seconds / this._playerService.duration * 100) + '%'
+    })
   }
 
 }

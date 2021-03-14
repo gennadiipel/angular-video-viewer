@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   videoUrl: string = 'https://www.w3schools.com/html/mov_bbb.mp4'
 
   width: string = '966px'
-  height: string = '600px'
+  height: string = 'auto'
 
   constructor(public settingsService: SettingsService) {}
 
