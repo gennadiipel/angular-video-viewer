@@ -8,6 +8,8 @@ export class PlayerService {
 
   constructor() { }
 
+  //#region is playing block
+
   // variable to store player state
   private _isPlayingState: boolean = false 
 
@@ -25,9 +27,28 @@ export class PlayerService {
   }
 
   // subject to which controls are subscribed to update their values according to state of player (playing/paused)
-  isPlayingSubject$: Subject<boolean> = new Subject<boolean>();
+  isPlayingSubject$: Subject<boolean> = new Subject<boolean>()
 
+  //#endregion
+  
+  //#region current time block
 
+  private _currentTime: number = 0
+
+  get currentTime(): number {
+    return this._currentTime
+  }
+
+  set currentTime(seconds: number) {
+    this._currentTime = seconds
+    this.currentTimeSubject$.next(seconds)
+  }
+
+  currentTimeSubject$: Subject<number> = new Subject<number>()
+
+  //#endregion
+
+  duration: number = 0
 
   pause(): void {
     this._isPlaying = false

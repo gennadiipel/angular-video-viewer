@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { VideoContainerComponent } from './components/video-container/video-container.component';
 import { VideoToolbarComponent } from './components/video-toolbar/video-toolbar.component';
 import { PlayPauseButtonComponent } from './components/controls/play-pause-button/play-pause-button.component';
-import { GoogleIconModule } from 'google-icon';
-import { GoogleIconComponent } from 'google-icon/google-icon/google-icon.component';
+import { ForwardButtonComponent } from './components/controls/forward-button/forward-button.component';
+import { DurationBarComponent } from './components/duration-bar/duration-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,8 @@ import { GoogleIconComponent } from 'google-icon/google-icon/google-icon.compone
     VideoContainerComponent,
     VideoToolbarComponent,
     PlayPauseButtonComponent,
+    ForwardButtonComponent,
+    DurationBarComponent,
   ],
   imports: [
     BrowserModule,
