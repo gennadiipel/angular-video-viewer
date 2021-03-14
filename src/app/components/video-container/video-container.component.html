@@ -1,6 +1,8 @@
-<video
+<video #videoPlayer
     [src]="settings.videoUrl"
     [ngStyle]="{
         width: (settings.height == 'auto') ? settings.width: 'auto'
     }"
+    (pause)="onPause($event)"
+    (play)="onPlay($event)"
 ></video>
