@@ -16,7 +16,8 @@ export class ForwardButtonComponent implements OnInit {
   }
 
   forward() {
-    this._playerService.currentTime += 10
+    if (this._playerService.currentTime + 10 > this._playerService.duration) this._playerService.currentTime = this._playerService.duration
+    else this._playerService.currentTime += 10
   }
 
 }
