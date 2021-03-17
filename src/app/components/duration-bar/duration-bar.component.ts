@@ -22,7 +22,7 @@ export class DurationBarComponent implements OnInit {
     })
   }
 
-  move(event: any): void {
+  move(event: MouseEvent): void {
     // bar width
     const barWidth: number = this.bar.nativeElement.offsetWidth
     
