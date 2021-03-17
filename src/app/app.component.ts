@@ -9,8 +9,8 @@ import { SettingsService } from './services/settings.service';
 export class AppComponent implements OnInit {
   videoUrl: string = 'https://www.w3schools.com/html/mov_bbb.mp4'
 
-  width: string = '966px'
-  height: string = 'auto'
+  width: string = 'auto'
+  height: string = '100%'
 
   constructor(public settingsService: SettingsService) {}
 

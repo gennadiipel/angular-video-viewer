@@ -7,6 +7,7 @@ import { VideoToolbarComponent } from './components/video-toolbar/video-toolbar.
 import { PlayPauseButtonComponent } from './components/controls/play-pause-button/play-pause-button.component';
 import { ForwardButtonComponent } from './components/controls/forward-button/forward-button.component';
 import { DurationBarComponent } from './components/duration-bar/duration-bar.component';
+import { TimeComponent } from './components/controls/time/time.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { DurationBarComponent } from './components/duration-bar/duration-bar.com
     PlayPauseButtonComponent,
     ForwardButtonComponent,
     DurationBarComponent,
+    TimeComponent,
   ],
   imports: [
     BrowserModule,
