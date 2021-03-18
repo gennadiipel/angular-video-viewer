@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SettingsService } from './services/settings.service';
 
 @Component({
@@ -7,10 +7,10 @@ import { SettingsService } from './services/settings.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  videoUrl: string = 'https://www.w3schools.com/html/mov_bbb.mp4'
+  @Input() videoUrl: string = 'https://www.w3schools.com/html/mov_bbb.mp4'
 
-  width: string = 'auto'
-  height: string = '100%'
+  @Input() width: string = 'auto'
+  @Input() height: string = '100%'
 
   constructor(public settingsService: SettingsService) {}
 
