@@ -1,3 +1,8 @@
-<div class="container" (click)="move($event)" #bar>
+<div 
+    class="container"
+    (mousedown)="move($event)"
+    [ngClass]="{'expanded': isMouseDown}"
+    #bar>
     <div class="value" [ngStyle]="{width: value}"></div>
+    <div class="circle"></div>
 </div>

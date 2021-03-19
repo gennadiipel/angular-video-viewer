@@ -7,11 +7,28 @@
     position: absolute
     bottom: 0
 
+    // TODO WITHOUT FLOAT!!!!!!!
+
     .value
         width: 0%
+        max-width: calc(100% - 5px) !important
         background: #e90f0f
         height: 100%
+        float: left
     
-    &:hover
+    &:hover, &.expanded
         height: 5px
         cursor: pointer
+
+    &:hover
+        .circle
+            margin-top: -2.2px
+    
+    .circle
+        float: left
+        width: 10px
+        height: 10px
+        background: #991616
+        margin-top: -3px
+        border-radius: 50%
+        margin-left: -5px
