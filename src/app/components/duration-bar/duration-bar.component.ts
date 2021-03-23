@@ -27,6 +27,8 @@ export class DurationBarComponent implements OnInit {
 
     this.isMouseDown = true
     this.update(event)
+
+    this.playerService.pause()
     
   }
 
