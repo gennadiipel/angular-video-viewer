@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Settings } from 'src/app/interfaces/settings.interface';
 import { PlayerService } from 'src/app/services/player.service';
@@ -20,7 +20,7 @@ export class VideoContainerComponent implements OnInit, OnDestroy {
 
   constructor(
     public settingsService: SettingsService,
-    private _playerService: PlayerService
+    private _playerService: PlayerService,
     ) { }
 
   ngOnInit(): void {
@@ -65,6 +65,11 @@ export class VideoContainerComponent implements OnInit, OnDestroy {
   onDurationChange() {
     this._playerService.duration = this.videoPlayer.nativeElement.duration
     console.log(this._playerService.duration)
+  }
+
+  onFullScreenChange() {
+    this._playerService.toggleFullScreen()
+    
   }
 
 }

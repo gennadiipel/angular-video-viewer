@@ -48,6 +48,24 @@ export class PlayerService {
 
   //#endregion
 
+  //#region fullscreen
+
+  private _isFullScreenState: boolean = false
+
+  private get _isFullScreen(): boolean {
+    return this._isFullScreenState
+  }
+
+  private set _isFullScreen(value: boolean) {
+    this._isFullScreenState = value
+    this.isFullScreenSubject$.next(value)
+  }
+
+  isFullScreenSubject$: Subject<boolean> = new Subject<boolean>()
+
+
+  //#endregion
+
   duration: number = 0
 
   pause(): void {
@@ -60,6 +78,10 @@ export class PlayerService {
 
   toggle(): void {
     this._isPlaying = !this._isPlaying
+  }
+
+  toggleFullScreen(): void {
+    this._isFullScreen = !this._isFullScreen
   }
 
 }

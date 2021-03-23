@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PlayerService } from './services/player.service';
 import { SettingsService } from './services/settings.service';
 
 @Component({
@@ -12,7 +13,10 @@ export class AppComponent implements OnInit {
   @Input() width: string = 'auto'
   @Input() height: string = '100%'
 
-  constructor(public settingsService: SettingsService) {}
+  constructor(
+    public settingsService: SettingsService,
+    private _playerService: PlayerService
+    ) {}
 
 
   ngOnInit() {
@@ -22,5 +26,9 @@ export class AppComponent implements OnInit {
       height: this.height
     }
 
+  }
+
+  toggle() {
+    this._playerService.toggle()
   }
 }

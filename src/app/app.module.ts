@@ -8,6 +8,7 @@ import { PlayPauseButtonComponent } from './components/controls/play-pause-butto
 import { ForwardButtonComponent } from './components/controls/forward-button/forward-button.component';
 import { DurationBarComponent } from './components/duration-bar/duration-bar.component';
 import { TimeComponent } from './components/controls/time/time.component';
+import { FullscreenButtonComponent } from './components/controls/fullscreen-button/fullscreen-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TimeComponent } from './components/controls/time/time.component';
     ForwardButtonComponent,
     DurationBarComponent,
     TimeComponent,
+    FullscreenButtonComponent,
   ],
   imports: [
     BrowserModule,
