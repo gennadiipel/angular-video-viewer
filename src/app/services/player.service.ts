@@ -50,14 +50,14 @@ export class PlayerService {
 
   //#region fullscreen
 
-  private _isFullScreenState: boolean = false
+  private _isFullScreen: boolean = false
 
-  private get _isFullScreen(): boolean {
-    return this._isFullScreenState
+  get isFullScreen(): boolean {
+    return this._isFullScreen
   }
 
-  private set _isFullScreen(value: boolean) {
-    this._isFullScreenState = value
+  set isFullScreen(value: boolean) {
+    this._isFullScreen = value
     this.isFullScreenSubject$.next(value)
   }
 
@@ -81,7 +81,7 @@ export class PlayerService {
   }
 
   toggleFullScreen(): void {
-    this._isFullScreen = !this._isFullScreen
+    this.isFullScreen = !this.isFullScreen
   }
 
 }

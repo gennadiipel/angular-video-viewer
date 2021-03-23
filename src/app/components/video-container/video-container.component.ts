@@ -69,7 +69,6 @@ export class VideoContainerComponent implements OnInit, OnDestroy {
 
   onFullScreenChange() {
     this._playerService.toggleFullScreen()
-    
   }
 
 }

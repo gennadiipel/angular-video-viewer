@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
 import { PlayerService } from './services/player.service';
 import { SettingsService } from './services/settings.service';
 
@@ -13,9 +13,11 @@ export class AppComponent implements OnInit {
   @Input() width: string = 'auto'
   @Input() height: string = '100%'
 
+  @ViewChild('mainContainer') mainContainer: ElementRef
+
   constructor(
     public settingsService: SettingsService,
-    private _playerService: PlayerService
+    private _playerService: PlayerService,
     ) {}
 
 
@@ -25,6 +27,18 @@ export class AppComponent implements OnInit {
       width: this.width,
       height: this.height
     }
+
+    // subscribe to isFullScreen and turn on it when true
+    this._playerService.isFullScreenSubject$
+    .subscribe(isFullScreen => {
+      if (isFullScreen) {
+        this.mainContainer.nativeElement.requestFullscreen()
+      } else {
+        document.exitFullscreen()
+      }
+
+      console.log('lol')
+    })
 
   }
 

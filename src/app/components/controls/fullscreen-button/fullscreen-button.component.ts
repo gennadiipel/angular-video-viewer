@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-fullscreen-button',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FullscreenButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _playerService: PlayerService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  toggleFullscreen() {
+    this._playerService.toggleFullScreen()
   }
 
 }
