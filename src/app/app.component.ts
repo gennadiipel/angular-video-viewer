@@ -10,8 +10,8 @@ import { SettingsService } from './services/settings.service';
 export class AppComponent implements OnInit {
   @Input() videoUrl: string = 'https://www.w3schools.com/html/mov_bbb.mp4'
 
-  @Input() width: string = 'auto'
-  @Input() height: string = '100%'
+  @Input() width: string = '600px'
+  @Input() height: string = 'auto'
 
   @ViewChild('mainContainer') mainContainer: ElementRef
 
@@ -36,8 +36,6 @@ export class AppComponent implements OnInit {
       } else {
         document.exitFullscreen()
       }
-
-      console.log('lol')
     })
 
   }

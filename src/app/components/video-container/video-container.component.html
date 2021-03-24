@@ -1,11 +1,12 @@
 <video #videoPlayer
-    [src]="settings.videoUrl"
+    [src]="settingsService.settings.videoUrl"
     [ngStyle]="{
-        width: (settings.height == 'auto') ? settings.width: 'auto'
+        width: (settingsService.settings.height) ? settingsService.settings.width: 'auto'
     }"
     (pause)="onPause($event)"
     (play)="onPlay($event)"
     (timeupdate)="onTimeUpdate()"
     (durationchange)="onDurationChange()"
     (webkitfullscreenchange)="onFullScreenChange()"
+    (dblclick)="toggleFullscreen()"
 ></video>

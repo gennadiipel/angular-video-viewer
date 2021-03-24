@@ -1,4 +1,4 @@
-<div class="container" [ngStyle]="{width: width, height: height}" #mainContainer>
+<div class="container" [ngStyle]="{width: settingsService.settings.width, height: settingsService.settings.height}" #mainContainer>
   <app-video-container (click)="toggle()"></app-video-container>
   <app-video-toolbar></app-video-toolbar>
 </div>

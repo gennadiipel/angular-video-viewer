@@ -11,7 +11,6 @@ import { SettingsService } from 'src/app/services/settings.service';
 })
 export class VideoContainerComponent implements OnInit, OnDestroy {
 
-  settings: Settings
 
   isPlayingSubscription: Subscription
 
@@ -24,7 +23,6 @@ export class VideoContainerComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit(): void {
-    this.settings = this.settingsService.settings
     
 
     // subscribes to player's state to play and pause <video> according to its state in service
@@ -68,6 +66,10 @@ export class VideoContainerComponent implements OnInit, OnDestroy {
   }
 
   onFullScreenChange() {
+    this._playerService.toggleFullScreen()
+  }
+
+  toggleFullscreen() {
     this._playerService.toggleFullScreen()
   }
 
