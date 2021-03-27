@@ -11,7 +11,7 @@ export class PlayerService {
   //#region is playing block
 
   // variable to store player state
-  private _isPlayingState: boolean = false 
+  private _isPlayingState: boolean = false
 
   // return current state
   private get _isPlaying(): boolean {
@@ -30,7 +30,7 @@ export class PlayerService {
   isPlayingSubject$: Subject<boolean> = new Subject<boolean>()
 
   //#endregion
-  
+
   //#region current time block
 
   private _currentTime: number = 0
@@ -83,5 +83,19 @@ export class PlayerService {
   toggleFullScreen(): void {
     this.isFullScreen = !this.isFullScreen
   }
+
+  isiOS(): boolean {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
 
 }
